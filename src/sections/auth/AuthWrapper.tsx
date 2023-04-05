@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // project-imports
-import AuthFooter from 'components/cards/AuthFooter';
-import Logo from 'components/logo';
+// import AuthFooter from 'components/cards/AuthFooter';
+// import Logo from 'components/logo';
 import AuthCard from './AuthCard';
 
 // assets
@@ -28,9 +28,9 @@ const AuthWrapper = ({ children }: Props) => (
         minHeight: '100vh'
       }}
     >
-      <Grid item xs={12} sx={{ ml: 3, mt: 3 }}>
+      {/* <Grid item xs={12} sx={{ ml: 3, mt: 3 }}>
         <Logo />
-      </Grid>
+      </Grid> */}
       <Grid item xs={12}>
         <Grid
           item
@@ -45,9 +45,9 @@ const AuthWrapper = ({ children }: Props) => (
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
+      {/* <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
         <AuthFooter />
-      </Grid>
+      </Grid> */}
     </Grid>
   </Box>
 );
