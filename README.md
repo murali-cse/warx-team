@@ -1,1 +1,1 @@
-# root_delivery_admin
+# Warx Team Admin Panel
