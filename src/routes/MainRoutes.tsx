@@ -8,7 +8,6 @@ import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')));
-const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -97,7 +96,6 @@ const MuiTableCollapse = Loadable(lazy(() => import('pages/tables/mui-table/coll
 
 // pages routing
 const AuthLogin = Loadable(lazy(() => import('pages/auth/login')));
-const AuthRegister = Loadable(lazy(() => import('pages/auth/register')));
 const AuthForgotPassword = Loadable(lazy(() => import('pages/auth/forgot-password')));
 const AuthResetPassword = Loadable(lazy(() => import('pages/auth/reset-password')));
 const AuthCheckMail = Loadable(lazy(() => import('pages/auth/check-mail')));
@@ -127,16 +125,7 @@ const MainRoutes = {
       children: [
         {
           path: 'dashboard',
-          children: [
-            {
-              path: 'default',
-              element: <DashboardDefault />
-            },
-            {
-              path: 'analytics',
-              element: <DashboardAnalytics />
-            }
-          ]
+          element: <DashboardDefault />
         },
         {
           path: 'widget',
@@ -512,10 +501,6 @@ const MainRoutes = {
         {
           path: 'login',
           element: <AuthLogin />
-        },
-        {
-          path: 'register',
-          element: <AuthRegister />
         },
         {
           path: 'forgot-password',

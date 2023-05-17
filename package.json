@@ -1,8 +1,7 @@
 {
-  "name": "root_delivery_admin",
-  "version": "9.0.0",
+  "name": "warx_team_panel",
+  "version": "1.0.0",
   "private": true,
-  
   "engines": {
     "node": "18.15.0"
   },

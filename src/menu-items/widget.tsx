@@ -2,7 +2,7 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { Story, Fatrows, PresentionChart } from 'iconsax-react';
+import { Story, Fatrows, PresentionChart, Chart21 } from 'iconsax-react';
 
 // type
 import { NavItemType } from 'types/menu';
@@ -10,7 +10,7 @@ import { NavItemType } from 'types/menu';
 // icons
 const icons = {
   widgets: Story,
-  statistics: Story,
+  dashboard: Chart21,
   data: Fatrows,
   chart: PresentionChart
 };
@@ -19,30 +19,24 @@ const icons = {
 
 const widget: NavItemType = {
   id: 'group-widget',
-  title: <FormattedMessage id="widgets" />,
+  title: <FormattedMessage id="Dashboard" />,
   icon: icons.widgets,
   type: 'group',
   children: [
     {
-      id: 'statistics',
-      title: <FormattedMessage id="statistics" />,
+      id: 'dashboard',
+      title: <FormattedMessage id="dashboard" />,
       type: 'item',
-      url: '/widget/statistics',
-      icon: icons.statistics
+      url: '/dashboard/',
+      icon: icons.dashboard,
+      breadcrumbs: false
     },
     {
-      id: 'data',
-      title: <FormattedMessage id="data" />,
+      id: 'projects',
+      title: <FormattedMessage id="Projects" />,
       type: 'item',
       url: '/widget/data',
       icon: icons.data
-    },
-    {
-      id: 'chart',
-      title: <FormattedMessage id="chart" />,
-      type: 'item',
-      url: '/widget/chart',
-      icon: icons.chart
     }
   ]
 };

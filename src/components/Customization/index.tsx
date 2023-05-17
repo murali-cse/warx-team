@@ -5,12 +5,8 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Divider, Drawer, Fab, Stack, Typography } from '@mui/material';
 
 // project-imports
-import ThemeLayout from './ThemeLayout';
 import ThemeMode from './ThemeMode';
-import ThemeContrast from './ThemeContrast';
 import ColorScheme from './ColorScheme';
-import ThemeWidth from './ThemeWidth';
-import ThemeMenuLayout from './ThemeMenuLayout';
 import MainCard from 'components/MainCard';
 import IconButton from 'components/@extended/IconButton';
 import SimpleBar from 'components/third-party/SimpleBar';
@@ -19,30 +15,17 @@ import useConfig from 'hooks/useConfig';
 // assets
 import { Add, Setting2 } from 'iconsax-react';
 import { HEADER_HEIGHT } from 'config';
-import MenuCaption from './MenuCaption';
 
 // ==============================|| HEADER CONTENT - CUSTOMIZATION ||============================== //
 
 const Customization = () => {
   const theme = useTheme();
-  const { container, mode, presetColor, miniDrawer, themeDirection, menuOrientation, menuCaption, themeContrast } = useConfig();
+  const { mode, presetColor } = useConfig();
 
-  // eslint-disable-next-line
-  const themeLayout = useMemo(() => <ThemeLayout />, [miniDrawer, themeDirection]);
-  // eslint-disable-next-line
-  const themeMenuLayout = useMemo(() => <ThemeMenuLayout />, [menuOrientation]);
   // eslint-disable-next-line
   const themeMode = useMemo(() => <ThemeMode />, [mode]);
   // eslint-disable-next-line
-  const themeContrastView = useMemo(() => <ThemeContrast />, [themeContrast]);
-  // eslint-disable-next-line
-  const menuCaptionView = useMemo(() => <MenuCaption />, [menuCaption]);
-  // eslint-disable-next-line
   const themeColor = useMemo(() => <ColorScheme />, [presetColor]);
-  // eslint-disable-next-line
-  const themeWidth = useMemo(() => <ThemeWidth />, [container]);
-  // eslint-disable-next-line
-  // const themeFont = useMemo(() => <ThemeFont />, [fontFamily]);
 
   const [open, setOpen] = useState(false);
   const handleToggle = () => {
@@ -137,7 +120,7 @@ const Customization = () => {
                   </Grid>
 
                   {/* theme-contrast */}
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <Stack>
                       <Typography variant="subtitle1" color="textPrimary">
                         Theme Contrast
@@ -152,7 +135,7 @@ const Customization = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
-                  </Grid>
+                  </Grid> */}
 
                   {/* custom-theme */}
                   <Grid item xs={12}>
@@ -173,7 +156,7 @@ const Customization = () => {
                   </Grid>
 
                   {/* menu-caption */}
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <Stack>
                       <Typography variant="subtitle1" color="textPrimary">
                         Sidebar Caption
@@ -182,16 +165,16 @@ const Customization = () => {
                         Hide your sidebar caption
                       </Typography>
                     </Stack>
-                  </Grid>
-                  <Grid item xs={12}>
+                  </Grid> */}
+                  {/* <Grid item xs={12}>
                     {menuCaptionView}
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
-                  </Grid>
+                  </Grid> */}
 
                   {/* theme-layout */}
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <Stack>
                       <Typography variant="subtitle1" color="textPrimary">
                         Theme Layout
@@ -206,10 +189,10 @@ const Customization = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
-                  </Grid>
+                  </Grid> */}
 
                   {/* theme-orientation */}
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <Stack>
                       <Typography variant="subtitle1" color="textPrimary">
                         Menu Orientation
@@ -224,10 +207,10 @@ const Customization = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
-                  </Grid>
+                  </Grid> */}
 
                   {/* theme-container */}
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <Stack>
                       <Typography variant="subtitle1" color="textPrimary">
                         Layout Width
@@ -242,7 +225,7 @@ const Customization = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
-                  </Grid>
+                  </Grid> */}
 
                   {/* theme-font-family */}
                   {/* <Grid item xs={12}>

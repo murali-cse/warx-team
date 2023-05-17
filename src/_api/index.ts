@@ -12,6 +12,3 @@ import './kanban';
 import './invoice';
 import './billing-address';
 import './product-reviews';
-
-// menu-items
-import './dashboard';
