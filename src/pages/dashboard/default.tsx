@@ -6,7 +6,7 @@ import { Grid, Stack, Typography } from '@mui/material';
 import EcommerceDataCard from 'components/cards/statistics/EcommerceDataCard';
 import EcommerceDataChart from 'sections/widget/chart/EcommerceDataChart';
 
-import RepeatCustomerRate from 'sections/widget/chart/RepeatCustomerRate';
+// import LinkOverview from 'sections/widget/chart/LinkOverview';
 import ProjectOverview from 'sections/widget/chart/ProjectOverview';
 import ProjectRelease from 'sections/dashboard/default/ProjectRelease';
 import AssignUsers from 'sections/widget/statistics/AssignUsers';
@@ -15,8 +15,9 @@ import Transactions from 'sections/widget/data/Transactions';
 import TotalIncome from 'sections/widget/chart/TotalIncome';
 
 // assets
-import { ArrowDown, ArrowUp, Book, Calendar, CloudChange, Wallet3 } from 'iconsax-react';
+import { ArrowDown, ArrowUp, Calendar, CloudChange, Wallet3, Link1 } from 'iconsax-react';
 import WelcomeBanner from 'sections/dashboard/default/WelcomeBanner';
+import LinkOverview from 'sections/widget/chart/LinkOverview';
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -32,7 +33,7 @@ const DashboardDefault = () => {
       {/* row 1 */}
       <Grid item xs={12} sm={6} lg={3}>
         <EcommerceDataCard
-          title="All Earnings"
+          title="Total Links"
           count="$3000"
           iconPrimary={<Wallet3 />}
           percentage={
@@ -46,10 +47,10 @@ const DashboardDefault = () => {
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
         <EcommerceDataCard
-          title="Page Views"
+          title="Removed Links"
           count="290+"
           color="warning"
-          iconPrimary={<Book color={theme.palette.warning.dark} />}
+          iconPrimary={<Link1 color={theme.palette.warning.dark} />}
           percentage={
             <Typography color="warning.dark" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <ArrowDown size={16} style={{ transform: 'rotate(-45deg)' }} /> 30.6%
@@ -94,7 +95,7 @@ const DashboardDefault = () => {
       <Grid item xs={12} md={8} lg={9}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <RepeatCustomerRate />
+            <LinkOverview />
           </Grid>
           <Grid item xs={12}>
             <ProjectOverview />

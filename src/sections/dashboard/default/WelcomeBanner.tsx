@@ -1,5 +1,5 @@
 // material-ui
-import { Grid, Typography, Button, Stack, Box } from '@mui/material';
+import { Grid, Typography, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 // project import
@@ -14,6 +14,14 @@ import WelcomeImage from 'assets/images/analytics/welcome-banner.png';
 
 const WelcomeBanner = () => {
   const theme = useTheme();
+
+  function getDayOfWeekName(dayOfWeek: number) {
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return daysOfWeek[dayOfWeek];
+  }
+
+  const today = new Date();
+  const weekName = getDayOfWeekName(today.getDay());
 
   return (
     <MainCard
@@ -41,22 +49,11 @@ const WelcomeBanner = () => {
         <Grid item md={6} sm={6} xs={12}>
           <Stack spacing={2} sx={{ padding: 3 }}>
             <Typography variant="h2" color={theme.palette.background.paper}>
-              Explore Redesigned Able Pro
+              Hello Raamesh 👋
             </Typography>
             <Typography variant="h6" color={theme.palette.background.paper}>
-              The Brand new User Interface with power of Material-UI Components. Explore the Endless possibilities with Able Pro.
+              Happy {weekName}, Raamesh! I have a surprise for you later today
             </Typography>
-            <Box>
-              <Button
-                variant="outlined"
-                color="secondary"
-                href="https://1.envato.market/c/1289604/275988/4415?subId1=phoenixcoded&u=https%3A%2F%2Fthemeforest.net%2Fitem%2Fable-pro-responsive-bootstrap-4-admin-template%2F19300403"
-                sx={{ color: 'background.paper', borderColor: theme.palette.background.paper, zIndex: 2 }}
-                target="_blank"
-              >
-                Exclusive on Themeforest
-              </Button>
-            </Box>
           </Stack>
         </Grid>
         <Grid item sm={6} xs={12} sx={{ display: { xs: 'none', sm: 'initial' } }}>

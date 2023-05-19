@@ -10,9 +10,9 @@ import AuthGuard from 'utils/route-guard/AuthGuard';
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')));
 
 // render - widget
-const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
-const WidgetData = Loadable(lazy(() => import('pages/widget/data')));
-const WidgetChart = Loadable(lazy(() => import('pages/widget/chart')));
+// const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
+// const WidgetData = Loadable(lazy(() => import('pages/widget/data')));
+// const WidgetChart = Loadable(lazy(() => import('pages/widget/chart')));
 
 // render - applications
 const AppChat = Loadable(lazy(() => import('pages/apps/chat')));
@@ -110,6 +110,9 @@ const MaintenanceComingSoon = Loadable(lazy(() => import('pages/maintenance/comi
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 const PricingPage = Loadable(lazy(() => import('pages/extra-pages/pricing')));
 
+// project
+const Project = Loadable(lazy(() => import('pages/project')));
+
 // ==============================|| MAIN ROUTES ||============================== //
 
 const MainRoutes = {
@@ -128,22 +131,30 @@ const MainRoutes = {
           element: <DashboardDefault />
         },
         {
-          path: 'widget',
-          children: [
-            {
-              path: 'statistics',
-              element: <WidgetStatistics />
-            },
-            {
-              path: 'data',
-              element: <WidgetData />
-            },
-            {
-              path: 'chart',
-              element: <WidgetChart />
-            }
-          ]
+          path: 'project',
+          element: <Project />
         },
+        {
+          path: 'tickets',
+          element: <Project />
+        },
+        // {
+        //   path: 'widget',
+        //   children: [
+        //     {
+        //       path: 'statistics',
+        //       element: <WidgetStatistics />
+        //     },
+        //     {
+        //       path: 'data',
+        //       element: <WidgetData />
+        //     },
+        //     {
+        //       path: 'chart',
+        //       element: <WidgetChart />
+        //     }
+        //   ]
+        // },
         {
           path: 'apps',
           children: [

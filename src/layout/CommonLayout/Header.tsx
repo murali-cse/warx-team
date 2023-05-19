@@ -25,7 +25,7 @@ import {
 // project-imports
 import { APP_DEFAULT_PATH } from 'config';
 import IconButton from 'components/@extended/IconButton';
-import AnimateButton from 'components/@extended/AnimateButton';
+// import AnimateButton from 'components/@extended/AnimateButton';
 import Logo from 'components/logo';
 
 // assets
@@ -95,7 +95,7 @@ const Header = ({ handleDrawerOpen, layout = 'landing', ...others }: Props) => {
       >
         <Container maxWidth="xl" disableGutters={matchDownMd}>
           <Toolbar sx={{ px: { xs: 1.5, sm: 4, md: 0, lg: 0 }, py: 1 }}>
-            <Stack direction="row" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }} alignItems="center">
+            <Stack direction="row" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }} alignItems="left">
               <Typography component="div" sx={{ textAlign: 'left', display: 'inline-block' }}>
                 <Logo reverse to="/" />
               </Typography>
@@ -107,7 +107,7 @@ const Header = ({ handleDrawerOpen, layout = 'landing', ...others }: Props) => {
                 sx={{ mt: 0.5, ml: 1, fontSize: '0.725rem', height: 20, '& .MuiChip-label': { px: 0.5 } }}
               />
             </Stack>
-            <Stack
+            {/* <Stack
               direction="row"
               sx={{
                 '& .header-link': { fontWeight: 500, '&:hover': { color: theme.palette.primary.main } },
@@ -149,7 +149,7 @@ const Header = ({ handleDrawerOpen, layout = 'landing', ...others }: Props) => {
                   </Button>
                 </AnimateButton>
               </Box>
-            </Stack>
+            </Stack> */}
             <Box
               sx={{
                 width: '100%',

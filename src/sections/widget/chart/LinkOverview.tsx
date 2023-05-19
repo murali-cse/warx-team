@@ -13,7 +13,7 @@ import { More } from 'iconsax-react';
 
 // ==============================|| CHART - REPEAT CUSTOMER RATE ||============================== //
 
-const RepeatCustomerRate = () => {
+const LinkOverview = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -29,7 +29,7 @@ const RepeatCustomerRate = () => {
   return (
     <MainCard>
       <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
-        <Typography variant="h5">Repeat customer rate</Typography>
+        <Typography variant="h5">Links Overview</Typography>
         <IconButton
           color="secondary"
           id="wallet-button"
@@ -72,4 +72,4 @@ const RepeatCustomerRate = () => {
   );
 };
 
-export default RepeatCustomerRate;
+export default LinkOverview;

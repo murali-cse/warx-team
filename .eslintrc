@@ -1,7 +1,7 @@
 {
   "plugins": ["prettier"],
   "extends": ["react-app", "prettier"],
-  
+
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -26,8 +26,7 @@
     "import/order": "off",
     "no-console": "off",
     "no-shadow": "off",
-   
-    
+
     "import/no-cycle": "off",
     "import/no-extraneous-dependencies": "off",
     "jsx-a11y/label-has-associated-control": "off",
@@ -38,7 +37,7 @@
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ],
-    
+
     "prettier/prettier": [
       "warn",
       {
