@@ -1,5 +1,4 @@
 // third-party
-import { FormattedMessage } from 'react-intl';
 
 // project-imports
 import { useSelector } from 'store';
@@ -23,7 +22,7 @@ export const DashboardMenu = () => {
     return SubChildrenLis?.map((subList: NavItemType) => {
       return {
         ...subList,
-        title: <FormattedMessage id={`${subList.title}`} />,
+        title: subList.title,
         // @ts-ignore
         icon: icons[subList.icon]
       };
@@ -33,7 +32,7 @@ export const DashboardMenu = () => {
   const menuList = (subList: NavItemType) => {
     let list: NavItemType = {
       ...subList,
-      title: <FormattedMessage id={`${subList.title}`} />,
+      title: subList.title,
       // @ts-ignore
       icon: icons[subList.icon]
     };
@@ -49,7 +48,7 @@ export const DashboardMenu = () => {
 
   const dashboardList: NavItemType = {
     ...menuDashboard,
-    title: <FormattedMessage id={`${menuDashboard.title}`} />,
+    title: menuDashboard.title,
     // @ts-ignore
     icon: icons[menuDashboard.icon],
     children: ChildrenList

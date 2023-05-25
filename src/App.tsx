@@ -5,7 +5,6 @@ import Routes from 'routes';
 import ThemeCustomization from 'themes';
 
 import Loader from 'components/Loader';
-import Locales from 'components/Locales';
 import RTLLayout from 'components/RTLLayout';
 import ScrollTop from 'components/ScrollTop';
 import Customization from 'components/Customization';
@@ -37,19 +36,17 @@ const App = () => {
   return (
     <ThemeCustomization>
       <RTLLayout>
-        <Locales>
-          <ScrollTop>
-            <AuthProvider>
-              <>
-                <Notistack>
-                  <Routes />
-                  <Customization />
-                  <Snackbar />
-                </Notistack>
-              </>
-            </AuthProvider>
-          </ScrollTop>
-        </Locales>
+        <ScrollTop>
+          <AuthProvider>
+            <>
+              <Notistack>
+                <Routes />
+                <Customization />
+                <Snackbar />
+              </Notistack>
+            </>
+          </AuthProvider>
+        </ScrollTop>
       </RTLLayout>
     </ThemeCustomization>
   );

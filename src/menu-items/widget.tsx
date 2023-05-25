@@ -1,5 +1,4 @@
 // third-party
-import { FormattedMessage } from 'react-intl';
 
 // assets
 import { Story, Fatrows, PresentionChart, Chart21, Cd } from 'iconsax-react';
@@ -20,28 +19,38 @@ const icons = {
 
 const widget: NavItemType = {
   id: 'group-widget',
-  title: <FormattedMessage id="Dashboard" />,
+  title: 'Dashboard',
   icon: icons.widgets,
   type: 'group',
   children: [
     {
       id: 'dashboard',
-      title: <FormattedMessage id="dashboard" />,
+      title: 'Dashboard',
       type: 'item',
       url: '/dashboard/',
       icon: icons.dashboard,
       breadcrumbs: false
     },
     {
-      id: 'projects',
-      title: <FormattedMessage id="Projects" />,
-      type: 'item',
-      url: '/project',
-      icon: icons.data
+      id: 'project',
+      title: 'Projects',
+      type: 'collapse',
+      url: '/project/',
+      icon: icons.data,
+      breadcrumbs: true,
+      children: [
+        {
+          id: 'details',
+          title: 'Details',
+          type: 'item',
+          url: '/project/details',
+          breadcrumbs: true
+        }
+      ]
     },
     {
       id: 'tickets',
-      title: <FormattedMessage id="Tickets" />,
+      title: 'Tickets',
       type: 'item',
       url: '/tickets',
       icon: icons.tickets

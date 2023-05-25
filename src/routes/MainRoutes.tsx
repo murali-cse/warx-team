@@ -111,7 +111,8 @@ const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')))
 const PricingPage = Loadable(lazy(() => import('pages/extra-pages/pricing')));
 
 // project
-const Project = Loadable(lazy(() => import('pages/project')));
+const Project = Loadable(lazy(() => import('pages/project/index')));
+const ProjectDetails = Loadable(lazy(() => import('pages/project/details')));
 
 // ==============================|| MAIN ROUTES ||============================== //
 
@@ -132,7 +133,17 @@ const MainRoutes = {
         },
         {
           path: 'project',
-          element: <Project />
+          children: [
+            {
+              index: true,
+              element: <Project />
+            },
+            {
+              path: 'details/',
+              label: 'Project Details',
+              element: <ProjectDetails />
+            }
+          ]
         },
         {
           path: 'tickets',

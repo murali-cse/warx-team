@@ -9,7 +9,7 @@ import EcommerceDataChart from 'sections/widget/chart/EcommerceDataChart';
 // import LinkOverview from 'sections/widget/chart/LinkOverview';
 import ProjectOverview from 'sections/widget/chart/ProjectOverview';
 import ProjectRelease from 'sections/dashboard/default/ProjectRelease';
-import AssignUsers from 'sections/widget/statistics/AssignUsers';
+// import AssignUsers from 'sections/widget/statistics/AssignUsers';
 
 import Transactions from 'sections/widget/data/Transactions';
 import TotalIncome from 'sections/widget/chart/TotalIncome';
@@ -105,7 +105,7 @@ const DashboardDefault = () => {
       <Grid item xs={12} md={4} lg={3}>
         <Stack spacing={3}>
           <ProjectRelease />
-          <AssignUsers />
+          {/* <AssignUsers /> */}
         </Stack>
       </Grid>
 

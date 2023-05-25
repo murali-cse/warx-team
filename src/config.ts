@@ -21,7 +21,6 @@ export const APP_BASE_NAME = '/';
 
 const config: DefaultConfigProps = {
   fontFamily: `Inter var`,
-  i18n: 'en',
   menuOrientation: 'vertical',
   menuCaption: true,
   miniDrawer: false,
