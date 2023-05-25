@@ -11,13 +11,14 @@ import ProjectOverview from 'sections/widget/chart/ProjectOverview';
 import ProjectRelease from 'sections/dashboard/default/ProjectRelease';
 // import AssignUsers from 'sections/widget/statistics/AssignUsers';
 
-import Transactions from 'sections/widget/data/Transactions';
+// import Transactions from 'sections/widget/data/Transactions';
 import TotalIncome from 'sections/widget/chart/TotalIncome';
 
 // assets
 import { ArrowDown, ArrowUp, Calendar, CloudChange, Wallet3, Link1 } from 'iconsax-react';
 import WelcomeBanner from 'sections/dashboard/default/WelcomeBanner';
 import LinkOverview from 'sections/widget/chart/LinkOverview';
+import RecentTickets from 'sections/widget/data/RecentTickets';
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -62,7 +63,22 @@ const DashboardDefault = () => {
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
         <EcommerceDataCard
-          title="Total task"
+          title="Projects"
+          count="200"
+          color="error"
+          iconPrimary={<CloudChange color={theme.palette.error.dark} />}
+          percentage={
+            <Typography color="error.dark" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              <ArrowDown size={16} style={{ transform: 'rotate(45deg)' }} /> 30.6%
+            </Typography>
+          }
+        >
+          <EcommerceDataChart color={theme.palette.error.dark} />
+        </EcommerceDataCard>
+      </Grid>
+      <Grid item xs={12} sm={6} lg={3}>
+        <EcommerceDataCard
+          title="Total Tickets"
           count="1,568"
           color="success"
           iconPrimary={<Calendar color={theme.palette.success.darker} />}
@@ -73,21 +89,6 @@ const DashboardDefault = () => {
           }
         >
           <EcommerceDataChart color={theme.palette.success.darker} />
-        </EcommerceDataCard>
-      </Grid>
-      <Grid item xs={12} sm={6} lg={3}>
-        <EcommerceDataCard
-          title="Download"
-          count="$200"
-          color="error"
-          iconPrimary={<CloudChange color={theme.palette.error.dark} />}
-          percentage={
-            <Typography color="error.dark" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <ArrowDown size={16} style={{ transform: 'rotate(45deg)' }} /> 30.6%
-            </Typography>
-          }
-        >
-          <EcommerceDataChart color={theme.palette.error.dark} />
         </EcommerceDataCard>
       </Grid>
 
@@ -105,13 +106,13 @@ const DashboardDefault = () => {
       <Grid item xs={12} md={4} lg={3}>
         <Stack spacing={3}>
           <ProjectRelease />
-          {/* <AssignUsers /> */}
         </Stack>
       </Grid>
 
       {/* row 3 */}
       <Grid item xs={12} md={6}>
-        <Transactions />
+        {/* <Transactions /> */}
+        <RecentTickets />
       </Grid>
       <Grid item xs={12} md={6}>
         <TotalIncome />

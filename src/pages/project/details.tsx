@@ -12,7 +12,7 @@ import { DocumentDownload, Youtube, Facebook, Instagram, GlobalSearch, GoogleDri
 import { useMemo } from 'react';
 
 // material-ui
-import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
+// import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
 
 import makeData from 'data/react-table';
 
@@ -25,46 +25,49 @@ const ProjectDetails = () => {
   const columns = useMemo(
     () => [
       {
-        Header: 'First Name',
-        accessor: 'firstName'
-      },
-      {
-        Header: 'Last Name',
+        Header: 'Platform',
         accessor: 'lastName'
       },
       {
-        Header: 'Email',
-        accessor: 'email'
+        Header: 'Links',
+        accessor: 'firstName'
       },
-      {
-        Header: 'Age',
-        accessor: 'age',
-        className: 'cell-right'
-      },
-      {
-        Header: 'Visits',
-        accessor: 'visits',
-        className: 'cell-right'
-      },
+      // {
+      //   Header: 'Email',
+      //   accessor: 'email'
+      // },
+      // {
+      //   Header: 'Age',
+      //   accessor: 'age',
+      //   className: 'cell-right'
+      // },
+      // {
+      //   Header: 'Visits',
+      //   accessor: 'visits',
+      //   className: 'cell-right'
+      // },
       {
         Header: 'Status',
         accessor: 'status',
         Cell: ({ value }: { value: string }) => {
           switch (value) {
             case 'Complicated':
-              return <Chip color="error" label="Complicated" size="small" variant="light" />;
+              return <Chip color="error" label="Processing" size="small" variant="light" />;
             case 'Relationship':
-              return <Chip color="success" label="Relationship" size="small" variant="light" />;
+              return <Chip color="success" label="Removed" size="small" variant="light" />;
             case 'Single':
             default:
-              return <Chip color="info" label="Single" size="small" variant="light" />;
+              return <Chip color="info" label="Unavailable" size="small" variant="light" />;
           }
         }
       },
       {
-        Header: 'Profile Progress',
-        accessor: 'progress',
-        Cell: ({ value }: { value: number }) => <LinearWithLabel value={value} sx={{ minWidth: 75 }} />
+        Header: 'Date',
+        accessor: 'date'
+      },
+      {
+        Header: 'Actions',
+        accessor: 'action'
       }
     ],
     []
