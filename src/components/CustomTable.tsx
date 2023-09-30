@@ -10,7 +10,8 @@ import { useFilters, useRowSelect, useTable, usePagination, Column, Row, HeaderG
 // project-imports
 import MainCard from 'components/MainCard';
 import ScrollX from 'components/ScrollX';
-import { CSVExport, IndeterminateCheckbox, TablePagination, TableRowSelection } from 'components/third-party/ReactTable';
+import { IndeterminateCheckbox } from 'components/third-party/ReactTable';
+import { CSVExport, TablePagination, TableRowSelection } from 'components/third-party/ReactTable';
 
 import { renderFilterTypes } from 'utils/react-table';
 
@@ -34,7 +35,7 @@ function CustomTable({ columns, data, title }: { columns: Column[]; data: []; ti
       columns,
       data,
       filterTypes,
-      initialState: { pageIndex: 0, pageSize: 10, selectedRowIds: { 0: true, 5: true, 7: true } }
+      initialState: { pageIndex: 0, pageSize: 10 }
     },
     useFilters,
     usePagination,
@@ -80,9 +81,9 @@ function CustomTable({ columns, data, title }: { columns: Column[]; data: []; ti
                   return (
                     <TableRow
                       {...row.getRowProps()}
-                      onClick={() => {
-                        row.toggleRowSelected();
-                      }}
+                      // onClick={() => {
+                      //   row.toggleRowSelected();
+                      // }}
                       sx={{ cursor: 'pointer', bgcolor: row.isSelected ? alpha(theme.palette.primary.lighter, 0.35) : 'inherit' }}
                     >
                       {row.cells.map((cell: Cell) => (

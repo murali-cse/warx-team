@@ -1,7 +1,7 @@
 // third-party
 
 // assets
-import { Story, Fatrows, PresentionChart, Chart21, Cd } from 'iconsax-react';
+import { Story, Fatrows, PresentionChart, Chart21, Cd, Document } from 'iconsax-react';
 
 // type
 import { NavItemType } from 'types/menu';
@@ -12,7 +12,8 @@ const icons = {
   dashboard: Chart21,
   data: Fatrows,
   chart: PresentionChart,
-  tickets: Cd
+  tickets: Cd,
+  reports: Document
 };
 
 // ==============================|| MENU ITEMS - WIDGETS ||============================== //
@@ -34,26 +35,26 @@ const widget: NavItemType = {
     {
       id: 'project',
       title: 'Projects',
-      type: 'collapse',
+      type: 'item',
       url: '/project/',
       icon: icons.data,
-      breadcrumbs: true,
-      children: [
-        {
-          id: 'details',
-          title: 'Details',
-          type: 'item',
-          url: '/project/details',
-          breadcrumbs: true
-        }
-      ]
+      breadcrumbs: false
     },
     {
       id: 'tickets',
       title: 'Tickets',
       type: 'item',
       url: '/tickets',
-      icon: icons.tickets
+      icon: icons.tickets,
+      breadcrumbs: false
+    },
+    {
+      id: 'reports',
+      title: 'Reports',
+      type: 'item',
+      url: '/reports',
+      icon: icons.reports,
+      breadcrumbs: false
     }
   ]
 };

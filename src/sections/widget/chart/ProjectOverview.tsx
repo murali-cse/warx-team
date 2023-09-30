@@ -1,8 +1,8 @@
 import { useEffect, useState, MouseEvent } from 'react';
 
 // material-ui
-import { Button, useTheme } from '@mui/material';
-import { Grid, ListItemButton, Menu, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 
 // third-party
 import ReactApexChart, { Props as ChartProps } from 'react-apexcharts';
@@ -12,7 +12,7 @@ import MainCard from 'components/MainCard';
 import IconButton from 'components/@extended/IconButton';
 
 // assets
-import { Add, More } from 'iconsax-react';
+// import { Add } from 'iconsax-react';
 
 // ==============================|| CHART ||============================== //
 
@@ -97,9 +97,9 @@ const ProjectOverview = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <MainCard>
@@ -113,9 +113,9 @@ const ProjectOverview = () => {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
-          <More />
+          {/* <More /> */}
         </IconButton>
-        <Menu
+        {/* <Menu
           id="wallet-menu"
           anchorEl={anchorEl}
           open={open}
@@ -136,7 +136,7 @@ const ProjectOverview = () => {
           <ListItemButton onClick={handleClose}>Today</ListItemButton>
           <ListItemButton onClick={handleClose}>Weekly</ListItemButton>
           <ListItemButton onClick={handleClose}>Monthly</ListItemButton>
-        </Menu>
+        </Menu> */}
       </Stack>
       <Grid container spacing={3} sx={{ mt: 1 }}>
         <Grid item xs={12} sm={6} md={4}>
@@ -165,11 +165,11 @@ const ProjectOverview = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
+        {/* <Grid item xs={12} md={4}>
           <Button fullWidth variant="contained" startIcon={<Add />} size="large">
             Add project
           </Button>
-        </Grid>
+        </Grid> */}
       </Grid>
     </MainCard>
   );

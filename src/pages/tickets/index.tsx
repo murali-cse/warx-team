@@ -1,5 +1,5 @@
 // material - ui;
-import { useTheme } from '@mui/material/styles';
+
 import { Button, Grid, Typography } from '@mui/material';
 import { Chip } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
@@ -9,36 +9,16 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 
-// project-imports
-import ReportCard from 'components/cards/statistics/ReportCard';
-
 // assets
-import {
-  DocumentDownload,
-  Youtube,
-  Facebook,
-  Instagram,
-  GlobalSearch,
-  GoogleDrive,
-  Send2,
-  Diagram,
-  Message,
-  Edit,
-  Trash,
-  Eye
-} from 'iconsax-react';
+import { Edit, Trash, Eye } from 'iconsax-react';
 
 import { useEffect, useMemo, useState } from 'react';
-
-// material-ui
-// import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
 
 import makeData from 'data/react-table';
 
 import CustomTable from 'components/CustomTable';
 
-const ProjectDetails = () => {
-  const theme = useTheme();
+const TicketDetails = () => {
   const [open, setOpen] = useState(false);
   const [filteredArr, setFilteredArr] = useState<string[]>([]);
 
@@ -46,12 +26,16 @@ const ProjectDetails = () => {
   const columns = useMemo(
     () => [
       {
-        Header: 'Platform',
+        Header: 'Company Name',
         accessor: 'platform'
       },
       {
-        Header: 'Links',
+        Header: 'Tickets',
         accessor: 'links'
+      },
+      {
+        Header: 'Priority',
+        accessor: 'priority'
       },
       {
         Header: 'Status',
@@ -170,6 +154,7 @@ const ProjectDetails = () => {
 
   return (
     <Grid container spacing={3}>
+      {/* view dialog */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -195,47 +180,13 @@ const ProjectDetails = () => {
         </DialogActions>
       </Dialog>
       <Grid item lg={12}>
-        <h1>Project Title</h1>
-      </Grid>
-      <Grid item lg={12} textAlign={'right'}>
-        <Button variant="contained">Add Links</Button>
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="30200" secondary="Total Links" color={theme.palette.secondary.main} iconPrimary={Diagram} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Telegram" color={'#0088cc'} iconPrimary={Send2} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="145" secondary="YouTube" color={theme.palette.error.main} iconPrimary={Youtube} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="290+" secondary="Facebook" color={'#1975EB'} iconPrimary={Facebook} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Instagram" color={'#D9236C'} iconPrimary={Instagram} />
-      </Grid>
-
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Search Engines" color={'#F6BA00'} iconPrimary={GlobalSearch} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Drive Links" color={'#209F61'} iconPrimary={GoogleDrive} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Download Links" color={'#00CABB'} iconPrimary={DocumentDownload} />
-      </Grid>
-      <Grid item xs={12} md={4} lg={3} sm={6}>
-        <ReportCard primary="500" secondary="Twitter" color={'#209CEB'} iconPrimary={Message} />
-      </Grid>
-      <Grid item lg={12}>
         <Typography variant="h3" mb={2} mt={3} pl={1}>
-          Links
+          Tickets
         </Typography>
-        <CustomTable columns={columns} data={data} title="Added Links" />
+        <CustomTable columns={columns} data={data} title="Tickets" />
       </Grid>
     </Grid>
   );
 };
 
-export default ProjectDetails;
+export default TicketDetails;

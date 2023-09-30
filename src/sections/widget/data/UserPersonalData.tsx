@@ -60,11 +60,6 @@ const UserPersonalData = () => {
                 </Tooltip>
               </Box>
             }
-            // secondaryAction={
-            //   <IconButton edge="end" aria-label="delete" color="secondary">
-            //     <Notepad />
-            //   </IconButton>
-            // }
           >
             <ListItemAvatar>
               <Avatar color="error" variant="rounded">
@@ -90,17 +85,9 @@ const UserPersonalData = () => {
             text ever since the 1500s, when an unknown printer took a galley.
           </Typography>
         </Grid>
-        {/* <Grid item xs={12}>
-          <Stack direction="row" alignItems="center" spacing={1.25}>
-            <Chip label="Fulltime" variant="combined" sx={{ color: 'text.primary' }} />
-            <Chip label="Remote" variant="combined" sx={{ color: 'text.primary' }} />
-            <Chip label="Hourly" variant="combined" sx={{ color: 'text.primary' }} />
-          </Stack>
-        </Grid> */}
         <Grid item xs={12}>
           <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} sx={{ mt: 1.5 }}>
             <Typography sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              {/* <Location size={14} /> NY, USA  */}
               <Clock size={14} style={{ marginLeft: 8 }} /> 2 days ago
             </Typography>
             <Link to={'details'}>

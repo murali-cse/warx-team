@@ -114,6 +114,13 @@ const PricingPage = Loadable(lazy(() => import('pages/extra-pages/pricing')));
 const Project = Loadable(lazy(() => import('pages/project/index')));
 const ProjectDetails = Loadable(lazy(() => import('pages/project/details')));
 
+// tickets
+const Ticket = Loadable(lazy(() => import('pages/tickets/index')));
+
+// reports
+const Reports = Loadable(lazy(() => import('pages/reports/index')));
+const ReportDetails = Loadable(lazy(() => import('pages/reports/details')));
+
 // ==============================|| MAIN ROUTES ||============================== //
 
 const MainRoutes = {
@@ -133,39 +140,32 @@ const MainRoutes = {
         },
         {
           path: 'project',
-          children: [
-            {
-              index: true,
-              element: <Project />
-            },
-            {
-              path: 'details/',
-              label: 'Project Details',
-              element: <ProjectDetails />
-            }
-          ]
+          element: <Project />
+        },
+        {
+          path: 'project/details/',
+          label: 'Project Details',
+          breadcrumbs: false,
+          element: <ProjectDetails />
         },
         {
           path: 'tickets',
-          element: <Project />
+          label: 'Ticket',
+          breadcrumbs: false,
+          element: <Ticket />
         },
-        // {
-        //   path: 'widget',
-        //   children: [
-        //     {
-        //       path: 'statistics',
-        //       element: <WidgetStatistics />
-        //     },
-        //     {
-        //       path: 'data',
-        //       element: <WidgetData />
-        //     },
-        //     {
-        //       path: 'chart',
-        //       element: <WidgetChart />
-        //     }
-        //   ]
-        // },
+        {
+          path: 'reports',
+          label: 'Reports',
+          breadcrumbs: false,
+          element: <Reports />
+        },
+        {
+          path: 'reports/details',
+          label: 'Reports Details',
+          breadcrumbs: false,
+          element: <ReportDetails />
+        },
         {
           path: 'apps',
           children: [

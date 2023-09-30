@@ -1,8 +1,8 @@
-import { useEffect, useState, MouseEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Grid, ListItemButton, Menu, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 
 // third-party
 import ReactApexChart, { Props as ChartProps } from 'react-apexcharts';
@@ -10,10 +10,10 @@ import ReactApexChart, { Props as ChartProps } from 'react-apexcharts';
 // project-imports
 import MainCard from 'components/MainCard';
 import Dot from 'components/@extended/Dot';
-import IconButton from 'components/@extended/IconButton';
+// import IconButton from 'components/@extended/IconButton';
 
 // assets
-import { ArrowUp, More } from 'iconsax-react';
+import { ArrowUp } from 'iconsax-react';
 
 // chart options
 const pieChartOptions = {
@@ -88,56 +88,12 @@ const ApexDonutChart = () => {
 // ==============================|| CHART WIDGETS - TOTAL INCOME ||============================== //
 
 const TotalIncome = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <MainCard>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
-            <Typography variant="h5">Total Income</Typography>
-            <IconButton
-              color="secondary"
-              id="wallet-button"
-              aria-controls={open ? 'wallet-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick}
-            >
-              <More style={{ transform: 'rotate(90deg)' }} />
-            </IconButton>
-            <Menu
-              id="wallet-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'wallet-button',
-                sx: { p: 1.25, minWidth: 150 }
-              }}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right'
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right'
-              }}
-            >
-              <ListItemButton onClick={handleClose}>Today</ListItemButton>
-              <ListItemButton onClick={handleClose}>Weekly</ListItemButton>
-              <ListItemButton onClick={handleClose}>Monthly</ListItemButton>
-            </Menu>
+            <Typography variant="h5">Total Links</Typography>
           </Stack>
         </Grid>
         <Grid item xs={12}>

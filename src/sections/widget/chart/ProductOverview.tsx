@@ -2,7 +2,7 @@ import { useEffect, useState, MouseEvent } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Button, Grid, ListItemButton, Menu, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Button, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 
 // third-party
 import ReactApexChart, { Props as ChartProps } from 'react-apexcharts';
@@ -94,9 +94,9 @@ const ProductOverview = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <MainCard>
@@ -114,7 +114,7 @@ const ProductOverview = () => {
             >
               <More style={{ transform: 'rotate(90deg)' }} />
             </IconButton>
-            <Menu
+            {/* <Menu
               id="wallet-menu"
               anchorEl={anchorEl}
               open={open}
@@ -135,7 +135,7 @@ const ProductOverview = () => {
               <ListItemButton onClick={handleClose}>Today</ListItemButton>
               <ListItemButton onClick={handleClose}>Weekly</ListItemButton>
               <ListItemButton onClick={handleClose}>Monthly</ListItemButton>
-            </Menu>
+            </Menu> */}
           </Stack>
         </Grid>
         <Grid item xs={12}>

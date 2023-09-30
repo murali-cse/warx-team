@@ -5,13 +5,7 @@ import { Grid, Stack, Typography } from '@mui/material';
 // project-imports
 import EcommerceDataCard from 'components/cards/statistics/EcommerceDataCard';
 import EcommerceDataChart from 'sections/widget/chart/EcommerceDataChart';
-
-// import LinkOverview from 'sections/widget/chart/LinkOverview';
-import ProjectOverview from 'sections/widget/chart/ProjectOverview';
 import ProjectRelease from 'sections/dashboard/default/ProjectRelease';
-// import AssignUsers from 'sections/widget/statistics/AssignUsers';
-
-// import Transactions from 'sections/widget/data/Transactions';
 import TotalIncome from 'sections/widget/chart/TotalIncome';
 
 // assets
@@ -97,9 +91,6 @@ const DashboardDefault = () => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <LinkOverview />
-          </Grid>
-          <Grid item xs={12}>
-            <ProjectOverview />
           </Grid>
         </Grid>
       </Grid>

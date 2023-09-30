@@ -2,6 +2,76 @@ import mockData, { range } from 'utils/mock-data';
 
 const newPerson = (index: number) => {
   const tempData = mockData(index);
+
+  const platformCode = tempData.number.status(0, 7);
+  let platform: string;
+
+  switch (platformCode) {
+    case 7:
+      platform = 'Instagram';
+      break;
+    case 6:
+      platform = 'Telegram';
+      break;
+    case 5:
+      platform = 'Youtube';
+      break;
+    case 4:
+      platform = 'Facebook';
+      break;
+    case 3:
+      platform = 'Search Engine';
+      break;
+    case 2:
+      platform = 'Drive Link';
+      break;
+    case 1:
+      platform = 'Twitter';
+      break;
+    case 0:
+    default:
+      platform = 'Download Links';
+      break;
+  }
+
+  const linksCode = tempData.number.status(0, 2);
+  let links: string;
+  switch (linksCode) {
+    case 5:
+      links = 'https://t.me/c/1942973741/14';
+      break;
+    case 4:
+      links = 'https://t.me/c/1942973741/15';
+      break;
+    case 3:
+      links = 'https://t.me/c/1942973741/16';
+      break;
+    case 2:
+      links = 'https://t.me/c/1942973741/17';
+      break;
+    case 1:
+      links = 'https://t.me/c/1942973741/18';
+      break;
+    case 0:
+    default:
+      links = 'https://t.me/c/1942973741/144';
+      break;
+  }
+
+  let priority: string;
+  switch (linksCode) {
+    case 2:
+      priority = 'High';
+      break;
+    case 1:
+      priority = 'Medium';
+      break;
+    case 0:
+    default:
+      priority = 'Low';
+      break;
+  }
+
   const statusCode = tempData.number.status(0, 2);
   let status: string;
   switch (statusCode) {
@@ -58,6 +128,9 @@ const newPerson = (index: number) => {
     progress: tempData.number.percentage,
     status,
     orderStatus,
+    platform,
+    links,
+    priority,
     contact: tempData.contact,
     country: tempData.address.country,
     address: tempData.address.full,
@@ -65,7 +138,8 @@ const newPerson = (index: number) => {
     about: tempData.text.sentence,
     avatar: tempData.number.status(1, 10),
     skills: tempData.skill,
-    time: tempData.time
+    time: tempData.time,
+    date: tempData.datetime
   };
 };
 
