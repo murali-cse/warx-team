@@ -2,9 +2,6 @@
   "name": "warx_team_panel",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "18.15.0"
-  },
   "homepage": "",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.22.4",
